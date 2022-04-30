@@ -2,7 +2,7 @@ import { Params } from './types';
 
 export default class Connection {
   private baseUrl = "https://swapi.dev/api/";
-  private doGetParams: string | undefined;
+  private doGetParams: string = '';
 
   public setDoGetParams(params: Params): void {
       let doGetParams: string = '?';

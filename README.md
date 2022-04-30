@@ -44,3 +44,11 @@ You don’t have to ever use `eject`. The curated feature set is suitable for sm
 You can learn more in the [Create React App documentation](https://facebook.github.io/create-react-app/docs/getting-started).
 
 To learn React, check out the [React documentation](https://reactjs.org/).
+
+## Comments
+
+- Created an api class called `Connection` in api-hooks to handle requests in one place
+- Installed `react-router-dom` dependency used for routing in the app and to pass necessary parameter by URL
+- Created component `start-wars-characters`: Main route component will show the list of `start-wars-character-card`
+- Created component `start-wars-character-card`: Which contains the UI card of the star wars character
+- Created component:`start-wars-character-details`: To load the star wars character details by the provided URL param
