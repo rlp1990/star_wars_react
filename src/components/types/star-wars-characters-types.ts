@@ -23,3 +23,8 @@ export type StarWarsCharacter = {
     edited: string;
     url: string;
 }
+
+export type StarWarsCharacterFilms = {
+    title: string;
+    release_date: string;
+}

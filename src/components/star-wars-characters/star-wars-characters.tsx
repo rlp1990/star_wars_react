@@ -1,12 +1,15 @@
 import { useEffect, useState } from "react";
 import Connection from "../../api/api-hooks";
 import { StarWarsCharacterCard } from "../star-wars-character-card/star-wars-character-card";
-import { StarWarsCharacter, StarWarsCharactersResponse } from "./start-wars-characters-types";
+import {
+  StarWarsCharacter,
+  StarWarsCharactersResponse,
+} from "../types/star-wars-characters-types";
+import "./star-wars-characters.css";
 
 const API_URL: string = "people";
 
 export default function StarWarsCharacters() {
-
   /**
    * @param {number} page The page number for the items to display
    */
@@ -18,10 +21,10 @@ export default function StarWarsCharacters() {
   const [starWarsCharacters, setStarWarsCharacters] =
     useState<StarWarsCharacter[]>();
 
-    /**
-     * Method to get the ID of the star wars character
-     * @param {String} url path for the star wars character request 
-     */
+  /**
+   * Method to get the ID of the star wars character
+   * @param {String} url path for the star wars character request
+   */
   const getStartWarsCharacterId = (url: string): number => {
     const urlSplitted = url.split("/");
     return Number(urlSplitted[urlSplitted.length - 2]);
@@ -38,6 +41,7 @@ export default function StarWarsCharacters() {
       (response: StarWarsCharactersResponse) => {
         const starWarsCharactersResponse: StarWarsCharacter[] =
           response.results;
+
         page === 1
           ? setStarWarsCharacters(starWarsCharactersResponse)
           : setStarWarsCharacters(
@@ -64,20 +68,32 @@ export default function StarWarsCharacters() {
   }, []);
 
   return (
-    <>
-      <div className="star-wars-character-container">
-        {starWarsCharacters?.map(starWarsCharacter => {
+    <div className="star-wars-character-container">
+      <h1 className="star-wars-character-container__title">
+        Star Wars Characters
+      </h1>
+      <div className="star-wars-character-container__body">
+        <div className="star-wars-character-container__list">
+          {starWarsCharacters?.map((starWarsCharacter) => {
             return (
-            <StarWarsCharacterCard 
+              <StarWarsCharacterCard
                 key={starWarsCharacter.name}
                 name={starWarsCharacter.name}
                 filmsNumber={starWarsCharacter.films.length}
                 birthYear={starWarsCharacter.birth_year}
                 id={getStartWarsCharacterId(starWarsCharacter.url)}
-                />)
-        })}
+              />
+            );
+          })}
+        </div>
+        <button
+          className="star-wars-character-container__load-more-button"
+          type="button"
+          onClick={fetchMoreStarWarsCharacters}
+        >
+          Load more
+        </button>
       </div>
-      <button onClick={() => fetchMoreStarWarsCharacters()}>Load more</button>
-    </>
+    </div>
   );
 }

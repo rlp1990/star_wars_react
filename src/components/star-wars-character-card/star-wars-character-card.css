@@ -1,0 +1,14 @@
+.star-wars-character-card {
+    width: 300px;
+    padding: 12px;
+    border: 1px solid #8f8282;
+    padding-top: 0;
+    border-radius: 2px;
+    background: white;
+    height: 136px;
+}
+
+.star-wars-character-card__details {
+    display: flex;
+    justify-content: space-between;
+}

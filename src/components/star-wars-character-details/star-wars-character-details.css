@@ -1,0 +1,67 @@
+.capitalize {
+    text-transform: capitalize;
+}
+.star-wars-character-details-container {
+    height: 100%;
+    text-align: left;
+}
+.star-wars-character-details-container__button {
+    margin-left: 26px;
+    display: flex;
+    gap: 10px;
+    align-items: center;
+    padding-top: 20px;
+}
+.star-wars-character-details-container__button img {
+    width: auto;
+    height: 20px;
+}
+.star-wars-character-details-container__button > * {
+    margin-top: 0;
+    margin-bottom: 0;
+}
+.star-wars-character-details-container__title {
+    margin-left: 26px;
+}
+.star-wars-character-details-container__body {
+    margin: 26px;
+    height: calc(100% - 164px);
+    overflow-y: auto;
+}
+.star-wars-character-details-container__body-attributes {
+    list-style-type: none;
+    display: flex;
+    flex-wrap: wrap;
+    background: darkgrey;
+    padding: 20px 12px;
+    gap: 72px;
+    column-gap: 158px;
+}
+.star-wars-character-details-container__body-attributes li {
+    color: seagreen;
+    font-size: x-large;
+}
+
+.star-wars-character-details-container__body-films-title {
+    color: darkred;
+}
+.star-wars-character-details-container__body-films li {
+    font-size: large;
+}
+
+@media screen and (max-width: 768px) {
+    .star-wars-character-details-container__button h3 {
+        display: none;
+    }
+    .star-wars-character-details-container__body-attributes {
+        gap: 18px;
+    }
+
+    .star-wars-character-details-container__body-attributes li {
+        width: 100%;
+    }
+
+    .star-wars-character-details-container__body-films li {
+        font-size: medium;
+    }
+}

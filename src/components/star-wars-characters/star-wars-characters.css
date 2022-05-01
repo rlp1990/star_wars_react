@@ -1,0 +1,38 @@
+.star-wars-character-container {
+    height: 100%;
+}
+
+.star-wars-character-container__title {
+    margin-top: 0;
+    padding-top: 22px;
+}
+.star-wars-character-container__body {
+    height: calc(100% - 86px);
+}
+
+.star-wars-character-container__list {
+    display: flex;
+    flex-wrap: wrap;
+    overflow-y: auto;
+    height: calc(100% - 80px);
+    column-gap: 43px;
+    row-gap: 43px;
+    padding: 0 18px;
+}
+
+.star-wars-character-container__load-more-button {
+    font-size: xx-large;
+    border: 1px solid grey;
+    border-radius: 2px;
+    background: darkseagreen;
+    padding: 8px 40px;
+    margin-top: 15px;
+    cursor: pointer;
+}
+
+@media screen and (min-width: 769px) {
+    .star-wars-character-container__load-more-button {
+        float: left;
+        margin-left: 20px;
+    }
+}
