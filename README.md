@@ -6,11 +6,6 @@ This project was bootstrapped with [Create React App](https://github.com/faceboo
 
 In the project root directory, you can run:
 
-### `git checkout develop`
-
-It will switch branch to develop.\
-(The one with the project code).
-
 ### `npm install`
 
 Will install all required dependencies.\
