@@ -1,6 +1,6 @@
 import { useEffect, useState } from "react";
 import Connection from "../../api/api-hooks";
-import { StarWarsCharacterCard } from "../star-wars-character-card/star-wars-character-card";
+import StarWarsCharacterCard from "../star-wars-character-card/star-wars-character-card";
 import {
   StarWarsCharacter,
   StarWarsCharactersResponse,
@@ -69,11 +69,10 @@ export default function StarWarsCharacters() {
 
   return (
     <div className="star-wars-character-container">
-      <h1 className="star-wars-character-container__title">
-        Star Wars Characters
-      </h1>
+      <h1 data-testid="star-wars-characters-title" 
+      className="star-wars-character-container__title">Star Wars Characters</h1>
       <div className="star-wars-character-container__body">
-        <div className="star-wars-character-container__list">
+        <div data-testid="star-wars-characters-list" className="star-wars-character-container__list">
           {starWarsCharacters?.map((starWarsCharacter) => {
             return (
               <StarWarsCharacterCard
@@ -82,6 +81,7 @@ export default function StarWarsCharacters() {
                 filmsNumber={starWarsCharacter.films.length}
                 birthYear={starWarsCharacter.birth_year}
                 id={getStartWarsCharacterId(starWarsCharacter.url)}
+                data-testid={starWarsCharacter.name}
               />
             );
           })}
@@ -89,6 +89,7 @@ export default function StarWarsCharacters() {
         <button
           className="star-wars-character-container__load-more-button"
           type="button"
+          data-testid="load-more-button"
           onClick={fetchMoreStarWarsCharacters}
         >
           Load more

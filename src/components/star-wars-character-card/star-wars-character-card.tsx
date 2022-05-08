@@ -8,7 +8,7 @@ export type Props = {
   id: number;
 }
 
-export function StarWarsCharacterCard({name, filmsNumber, birthYear, id}: Props) {
+export default function StarWarsCharacterCard({name, filmsNumber, birthYear, id}: Props) {
   return (
   <div className='star-wars-character-card'>
       <Link to={`./start-wars-character-details/${id}`}><h2>{name}</h2></Link>
